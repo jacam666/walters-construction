@@ -1,102 +1,96 @@
-import Image from "next/image";
+"use client";
+import Navbar from "@/components/Navbar";
+import { FaDraftingCompass, FaHammer, FaTools } from "react-icons/fa";
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <Navbar />
+      {/* Hero Section */}
+      <section className="relative bg-gray-100 text-white px-4 py-12 sm:py-24 text-center">
+        <div className="block sm:hidden mb-6">
+          <img
+            src="/images/homepage-image-1.jpg"
+            alt="Construction site"
+            className="w-full h-auto rounded shadow"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+        <div className="hidden sm:block absolute inset-0 z-0 bg-[url('/images/homepage-image-1.jpg')] bg-cover bg-center opacity-60"></div>
+
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900 sm:text-white">
+            Welcome to Walters Construction
+          </h1>
+          <p className="text-lg sm:text-xl mb-6 text-gray-800 sm:text-white">
+            Building dreams with quality and integrity.
+          </p>
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+            View Our Services
+          </button>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-16 px-8 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-4 text-gray-900">Who We Are</h2>
+        <p className="text-gray-700 max-w-2xl mx-auto">
+          Waters Construction has been delivering high-quality construction services across the UK for over 20 years. We specialize in residential, commercial, and industrial projects.
+        </p>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 px-8 bg-gray-100">
+        <h2 className="text-3xl text-gray-900 font-bold text-center mb-10">Our Services</h2>
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div>
+              <div className="text-yellow-500 text-5xl mb-4 flex justify-center">
+                <FaDraftingCompass />
+              </div>
+            </div>
+            <h3 className="text-xl text-gray-900 font-semibold mb-2">Planning & Design</h3>
+            <p className="text-gray-600">Expert architectural and project planning services.</p>
+          </div>
+          <div>
+            <div className="text-yellow-500 text-5xl mb-4 flex justify-center">
+              <FaHammer />
+            </div>
+            <h3 className="text-xl text-gray-900 font-semibold mb-2">Construction</h3>
+            <p className="text-gray-600">From ground-up builds to renovations.</p>
+          </div>
+          <div>
+            <div className="text-yellow-500 text-5xl mb-4 flex justify-center">
+              <FaTools />
+            </div>
+            <h3 className="text-xl text-gray-900 font-semibold mb-2">Maintenance</h3>
+            <p className="text-gray-600">Ongoing property and structural upkeep.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-8 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-10 text-gray-900">What Our Clients Say</h2>
+        <blockquote className="max-w-xl mx-auto italic text-gray-700">
+          "Waters Construction exceeded our expectations. The team was professional, reliable, and completed our project on time and within budget."
+        </blockquote>
+        <p className="mt-4 font-semibold text-gray-800">— Sarah M., London</p>
+      </section>
+
+      {/* Call To Action Section */}
+      <section className="py-12 bg-yellow-500 text-white text-center">
+        <h2 className="text-3xl font-bold mb-4">Ready to Build With Us?</h2>
+        <p className="mb-6">Contact us today for a free consultation.</p>
+        <button className="bg-white text-yellow-600 font-bold py-2 px-6 rounded hover:bg-gray-100">
+          Get a Free Quote
+        </button>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white text-center py-6">
+        <p>&copy; {new Date().getFullYear()} Waters Construction. All rights reserved.</p>
       </footer>
     </div>
   );
