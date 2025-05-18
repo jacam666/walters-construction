@@ -2,8 +2,6 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import IconButton from '@mui/material/IconButton';
 import Dialog from '@mui/material/Dialog';
 import { useMediaQuery, useTheme } from '@mui/material';
 import ResponsiveAppBar from '@/components/Navbar';
@@ -72,7 +70,7 @@ export default function CustomImageList() {
               <ImageListItem key={item.img} cols={cols} rows={rows}>
                 <img
                   {...srcset(item.img, 250, 200, rows, cols)}
-                  alt={item.title}
+                  alt=""
                   loading="lazy"
                   onClick={() => handleClickOpen(item.img)}
                   style={{
@@ -82,23 +80,6 @@ export default function CustomImageList() {
                     objectFit: 'cover',
                     transition: 'transform 0.3s ease',
                   }}
-                />
-                <ImageListItemBar
-                  sx={{
-                    background:
-                      'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                      'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-                  }}
-                  title={item.title}
-                  position="top"
-                  actionIcon={
-                    <IconButton
-                      sx={{ color: 'white' }}
-                      aria-label={`star ${item.title}`}
-                    >
-                    </IconButton>
-                  }
-                  actionPosition="left"
                 />
               </ImageListItem>
             );
@@ -115,7 +96,6 @@ export default function CustomImageList() {
           />
         )}
       </Dialog>
-
       <Footer />
     </div>
   );
