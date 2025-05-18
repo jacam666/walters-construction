@@ -3,8 +3,12 @@ import React from "react";
 import Footer from "@/components/Footer";
 import ResponsiveAppBar from "@/components/Navbar";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-import Slider from "react-slick";
+
 
 const testimonials = [
   {
@@ -108,18 +112,29 @@ export default function About() {
         </div>
       </div>
       <div className="bg-gray-100 py-12">
-        <h2 className="text-3xl font-bold text-center text-gray-900  mb-10">What Our Clients Say</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">
+          What Our Clients Say
+        </h2>
         <div className="max-w-3xl mx-auto px-4">
-          <Slider {...sliderSettings}>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            autoplay={{ delay: 5000 }}
+            pagination={{ clickable: true }}
+          >
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-lg shadow p-8 text-center">
-                <p className="text-gray-700 italic mb-4 text-lg">"{testimonial.quote}"</p>
-                <h4 className="text-md font-semibold text-gray-800">{testimonial.name}</h4>
-                <p className="text-sm text-gray-500">{testimonial.location}</p>
-              </div>
+              <SwiperSlide key={index}>
+                <div className="bg-white rounded-lg shadow p-8 text-center">
+                  <p className="text-gray-700 italic mb-4 text-lg">"{testimonial.quote}"</p>
+                  <h4 className="text-md font-semibold text-gray-800">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-500">{testimonial.location}</p>
+                </div>
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </div>
+
       </div>
 
       <Footer />
