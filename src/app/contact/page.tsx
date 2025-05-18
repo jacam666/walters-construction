@@ -16,7 +16,7 @@ export default function Contact() {
 
         const form = event.currentTarget;
         const formData = new FormData(form);
-        formData.append("access_key", "f1be0cbb-fbe0-4f52-9f10-45bdc7006a42");
+        formData.append("access_key", "2dcede50-807f-4105-b537-2481a15ebeec");
 
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
@@ -128,7 +128,7 @@ export default function Contact() {
                     {/* Areas Covered */}
                     <div className="bg-white/80 backdrop-blur rounded-lg p-6 shadow">
                         <h3 className="text-2xl font-semibold mb-4 text-gray-800 text-center">Areas Covered</h3>
-                        <ul className="space-y-2 text-gray-700 text-center">
+                        <ul className="space-y-2 text-gray-700 w-1/2  mx-auto">
                             {[
                                 "Leighton Buzzard",
                                 "Milton Keynes",

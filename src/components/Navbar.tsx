@@ -16,6 +16,7 @@ import path from 'path';
 // const pages = ['About Us', 'Gallery', 'Contact'];
 
 const pages = [
+  { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
   { label: 'Gallery', path: '/gallery' },
   { label: 'Contact', path: '/contact' },

@@ -1,5 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import { FaDraftingCompass, FaHammer, FaTools } from "react-icons/fa";
 
 
@@ -26,9 +27,11 @@ export default function Home() {
           <p className="text-lg sm:text-xl mb-6 text-gray-700 sm:text-white sm:font-bold">
             Building dreams with quality and integrity.
           </p>
-          <button className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded">
-            View Our Services
-          </button>
+          <Link href="/about">
+            <button className="bg-sky-600 text-white font-bold py-2 px-6 rounded hover:bg-sky-700 transition duration-300">
+              View Our Services
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -83,9 +86,11 @@ export default function Home() {
       <section className="py-12 bg-sky-600 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Build With Us?</h2>
         <p className="mb-6">Contact us today for a free consultation.</p>
-        <button className="bg-white text-sky-600 font-bold py-2 px-6 rounded hover:bg-gray-100">
-          Get a Free Quote
-        </button>
+        <Link href="/contact">
+          <button className="bg-white text-sky-600 font-bold py-2 px-6 rounded hover:bg-gray-200 transition duration-300">
+            Get A Free Quote
+          </button>
+        </Link>
       </section>
 
       {/* Footer */}
