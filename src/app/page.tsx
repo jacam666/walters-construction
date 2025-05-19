@@ -1,4 +1,5 @@
 "use client";
+import ResponsiveAppBar from "@/components/Navbar";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { FaDraftingCompass, FaHammer, FaTools } from "react-icons/fa";
@@ -7,7 +8,8 @@ import { FaDraftingCompass, FaHammer, FaTools } from "react-icons/fa";
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <ResponsiveAppBar />
       {/* Hero Section */}
       <section className="relative bg-gray-100 text-white px-4 py-12 sm:py-24 text-center">
         <div className="block sm:hidden mb-6">
@@ -22,7 +24,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-2xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 sm:text-white">
-            Welcome to Walters Construction
+            Welcome to Waters Construction
           </h1>
           <p className="text-lg sm:text-xl mb-6 text-gray-700 sm:text-white sm:font-bold">
             Building dreams with quality and integrity.

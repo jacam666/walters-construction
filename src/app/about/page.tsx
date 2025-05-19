@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 const testimonials = [
   {
     quote:
-      "Walters Construction did an amazing job on our patio — professional, on time, and the result was stunning.",
+      "Waters Construction did an amazing job on our patio — professional, on time, and the result was stunning.",
     name: "Sarah M.",
     location: "Milton Keynes",
   },
@@ -31,7 +31,7 @@ const testimonials = [
   },
   {
     quote:
-      "Reliable, affordable, and excellent workmanship. Highly recommend Walters Construction.",
+      "Reliable, affordable, and excellent workmanship. Highly recommend Waters Construction.",
     name: "Ahmed R.",
     location: "Luton",
   },
@@ -92,7 +92,7 @@ export default function About() {
         />
 
         <p className="text-lg text-gray-700 max-w-2xl text-center mx-auto mb-16">
-          Walters Construction has been delivering high-quality construction and landscaping services across the UK for over 20 years. Our expert team specializes in transforming residential and commercial spaces with exceptional craftsmanship and care.
+          Waters Construction has been delivering high-quality construction and landscaping services across the UK for over 20 years. Our expert team specializes in transforming residential and commercial spaces with exceptional craftsmanship and care.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">

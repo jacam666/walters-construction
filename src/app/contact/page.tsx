@@ -151,7 +151,7 @@ export default function Contact() {
                         <h3 className="text-2xl font-semibold mb-4 text-gray-800 text-center">Contact Details</h3>
                         <p className="mb-4 flex items-center justify-center text-gray-700">
                             <EnvelopeIcon className="w-6 h-6 mr-2 text-sky-600" />
-                            WaltersConstruction@gmail.com
+                            WatersConstruction@gmail.com
                         </p>
                         <p className="flex items-center justify-center text-gray-700">
                             <PhoneIcon className="w-6 h-6 mr-2 text-sky-600" />
