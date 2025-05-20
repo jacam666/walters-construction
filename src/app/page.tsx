@@ -1,6 +1,5 @@
 "use client";
 import ResponsiveAppBar from "@/components/Navbar";
-import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { FaDraftingCompass, FaHammer, FaTools } from "react-icons/fa";
 
@@ -8,8 +7,9 @@ import { FaDraftingCompass, FaHammer, FaTools } from "react-icons/fa";
 export default function Home() {
   return (
     <div>
-      {/* <Navbar /> */}
-      <ResponsiveAppBar />
+      <div className="sticky top-0 z-50 bg-white shadow">
+        <ResponsiveAppBar />
+      </div>
       {/* Hero Section */}
       <section className="relative bg-gray-100 text-white px-4 py-12 sm:py-24 text-center">
         <div className="block sm:hidden mb-6">

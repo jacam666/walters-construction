@@ -79,7 +79,9 @@ const services = [
 export default function About() {
   return (
     <div>
-      <ResponsiveAppBar />
+      <div className="sticky top-0 z-50 bg-white shadow">
+        <ResponsiveAppBar />
+      </div>
       <div className="flex flex-col min-h-screen bg-gray-100 px-4 py-12">
         <h1 className="text-4xl text-gray-900 font-bold mb-8 text-center">About Us</h1>
 

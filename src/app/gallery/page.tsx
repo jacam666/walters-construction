@@ -41,12 +41,14 @@ export default function CustomImageList() {
 
   return (
     <div>
-      <ResponsiveAppBar />
-      <div className='bg-white py-6 px-4'>
-        <h1 className="text-4xl text-gray-900 font-bold mb-8 text-center">
+      <div className="sticky top-0 z-50 bg-white shadow">
+        <ResponsiveAppBar />
+      </div>
+      <div className='bg-white py-6 px-4 sm:py-12'>
+        <h1 className="text-4xl text-gray-900 font-bold  text-center">
           Gallery
         </h1>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto text-center mb-8">
+        <p className="text-lg text-gray-700 max-w-2xl mx-auto text-center ">
           Explore our collection of stunning images showcasing our work.
         </p>
       </div>

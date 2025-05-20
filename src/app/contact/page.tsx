@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPinIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import ResponsiveAppBar from "@/components/Navbar";
 
 export default function Contact() {
     const [submitted, setSubmitted] = useState(false);
@@ -40,7 +40,9 @@ export default function Contact() {
 
     return (
         <div>
-            <Navbar />
+            <div className="sticky top-0 z-50 bg-white shadow">
+                <ResponsiveAppBar />
+            </div>
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 py-12">
                 <h1 className="text-4xl text-gray-900 font-bold mb-8 text-center">Contact Us</h1>
 
