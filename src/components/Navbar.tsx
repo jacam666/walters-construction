@@ -64,6 +64,35 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
           </Box>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+            }}
+          >
+            {pages.map((page) => (
+              <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                <Link href={page.path} passHref>
+                  <Typography textAlign="center" className="text-gray-800">
+                    {page.label}
+                  </Typography>
+                </Link>
+              </MenuItem>
+            ))}
+          </Menu>
+
           {/* Mobile Logo (centered) */}
           <Box
             sx={{
