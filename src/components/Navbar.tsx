@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Link from 'next/link';
 import path from 'path';
+import Image from 'next/image';
 
 // const pages = ['About Us', 'Gallery', 'Contact'];
 
@@ -38,28 +39,23 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl" className='bg-gray-800 border-none'>
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Link href="/" passHref>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', height: 40, mr: 2 }}>
+              <Image
+                src="/images/logo.png"
+                alt="WP Construction Logo"
+                width={120}
+                height={40}
+                priority
+                style={{ objectFit: 'contain' }}
+              />
+            </Box>
+          </Link>
+          {/* Mobile Menu Icon (left) */}
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -67,52 +63,33 @@ function ResponsiveAppBar() {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-                  <Link href={page.path} passHref>
-                    <Typography textAlign="center" className='text-gray-800'>
-                      {page.label}
-                    </Typography>
-                  </Link>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+          {/* Mobile Logo (centered) */}
+          <Box
             sx={{
-              mr: 2,
               display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              height: '64px', // default AppBar height
+              pointerEvents: 'none', // prevent blocking menu button clicks
+              zIndex: 0, // ensure it's behind the menu icon
             }}
           >
-            LOGO
-          </Typography>
+            <Image
+              src="/images/logo.png"
+              alt="WP Construction Logo"
+              width={100}
+              height={35}
+              priority
+              style={{ objectFit: 'contain' }}
+            />
+          </Box>
+
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link key={page.label} href={page.path} passHref >
