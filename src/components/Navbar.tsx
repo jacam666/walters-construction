@@ -4,24 +4,29 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import Fade from '@mui/material/Fade';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import Link from 'next/link';
-import path from 'path';
 import Image from 'next/image';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
-// const pages = ['About Us', 'Gallery', 'Contact'];
+
+
 
 const pages = [
-  { label: 'Home', path: '/' },
-  { label: 'About Us', path: '/about' },
-  { label: 'Gallery', path: '/gallery' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Home', path: '/', icon: <HomeIcon fontSize="small" /> },
+  { label: 'About Us', path: '/about', icon: <InfoIcon fontSize="small" /> },
+  { label: 'Gallery', path: '/gallery', icon: <PhotoLibraryIcon fontSize="small" /> },
+  { label: 'Contact', path: '/contact', icon: <ContactMailIcon fontSize="small" /> },
 ];
+
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -64,7 +69,7 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          <Menu
+          {/* <Menu
             id="menu-appbar"
             anchorEl={anchorElNav}
             anchorOrigin={{
@@ -91,7 +96,62 @@ function ResponsiveAppBar() {
                 </Link>
               </MenuItem>
             ))}
+          </Menu> */}
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            TransitionComponent={Fade}
+            PaperProps={{
+              sx: {
+                mt: 1,
+                px: 1,
+                py: 0.5,
+                backgroundColor: 'white',
+                boxShadow: 4,
+                borderRadius: 2,
+              },
+            }}
+          >
+            {pages.map((page) => (
+              <MenuItem
+                key={page.label}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  borderRadius: 1,
+                  '&:hover': {
+                    backgroundColor: '#f3f4f6', // Tailwind's gray-100 equivalent
+                  },
+                }}
+              >
+                <Link href={page.path} passHref>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    {page.icon}
+                    <Typography
+                      textAlign="center"
+                      sx={{
+                        color: '#1f2937', // Tailwind's gray-800
+                        fontWeight: 500,
+                        width: '100%',
+                      }}
+                    >
+                      {page.label}
+                    </Typography>
+                  </Box>
+                </Link>
+              </MenuItem>
+            ))}
           </Menu>
+
 
           {/* Mobile Logo (centered) */}
           <Box
