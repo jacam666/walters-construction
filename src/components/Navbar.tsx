@@ -44,7 +44,7 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl" className='bg-gray-800 border-none'>
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Link href="/" passHref>
+          <Link href="/">
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', height: 40, mr: 2 }}>
               <Image
                 src="/images/logo.png"
@@ -69,34 +69,6 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          {/* <Menu
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{
-              display: { xs: 'block', md: 'none' },
-            }}
-          >
-            {pages.map((page) => (
-              <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-                <Link href={page.path} passHref>
-                  <Typography textAlign="center" className="text-gray-800">
-                    {page.label}
-                  </Typography>
-                </Link>
-              </MenuItem>
-            ))}
-          </Menu> */}
           <Menu
             id="menu-appbar"
             anchorEl={anchorElNav}
@@ -129,7 +101,7 @@ function ResponsiveAppBar() {
                 sx={{
                   borderRadius: 1,
                   '&:hover': {
-                    backgroundColor: '#f3f4f6', // Tailwind's gray-100 equivalent
+                    backgroundColor: '#f3f4f6',
                   },
                 }}
               >
@@ -139,7 +111,7 @@ function ResponsiveAppBar() {
                     <Typography
                       textAlign="center"
                       sx={{
-                        color: '#1f2937', // Tailwind's gray-800
+                        color: '#1f2937',
                         fontWeight: 500,
                         width: '100%',
                       }}
@@ -152,33 +124,36 @@ function ResponsiveAppBar() {
             ))}
           </Menu>
 
+          <Link href="/">
+            <Box
+              sx={{
+                display: { xs: 'flex', md: 'none' },
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '64px',
+                width: '100%',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                zIndex: 0,
+                pointerEvents: 'none', // ✅ disables Box clicks (so menu works)
+              }}
+            >
+              <Image
+                src="/images/logo.png"
+                alt="WP Construction Logo"
+                width={100}
+                height={35}
+                priority
+                style={{
+                  objectFit: 'contain',
+                  pointerEvents: 'auto', // ✅ enables click on the image
+                }}
+              />
+            </Box>
+          </Link>
 
-          {/* Mobile Logo (centered) */}
-          <Box
-            sx={{
-              display: { xs: 'flex', md: 'none' },
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%',
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              height: '64px', // default AppBar height
-              pointerEvents: 'none', // prevent blocking menu button clicks
-              zIndex: 0, // ensure it's behind the menu icon
-            }}
-          >
-            <Image
-              src="/images/logo.png"
-              alt="WP Construction Logo"
-              width={100}
-              height={35}
-              priority
-              style={{ objectFit: 'contain' }}
-            />
-          </Box>
-
-
+          {/* Desktop Menu (right) */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link key={page.label} href={page.path} passHref >
